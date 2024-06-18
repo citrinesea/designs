@@ -11,16 +11,48 @@
 <style>
 
 body{
-     background-color: #00020a;
+     background-color: #02000d;
+
+     animation: fadeInAnimation ease 3s;
+     animation-iteration-count: 1;
+     animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 img {
   width: auto;
-  height: auto ;
+  height: auto;
 }
 
 .centering {
    text-align: center;
+}
+
+.directory {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to bottom, transparent 0, #24003ba3 90%);
+    color: #fff;
+    position: absolute;
+    padding: 5em 0.75em 0.75em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-width: 0;
+
+    z-index: 2;
 }
 
 .row {
@@ -33,28 +65,62 @@ img {
    width: 80%;
 }
 
-.row img{
-max-width: 100% ;
-max-height: 500px;
-border-radius: 10px;
+.row a{
 }
 
-.row-enstars{
-     display: inline-block;
-     transition: transform .1s;
-     text-align: center;
-}
-.row-enstars:hover{
-     transform: scale(1.05);
+.row a:hover{
+    color: rgb(210, 190, 255);
+    text-decoration: none;
 }
 
-.row-18trip{
-     display: inline-block;
-     transition: transform .1s;
+.row a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.row a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.row  a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.row-item{
+     position: relative;
+     overflow: hidden;
      text-align: center;
 }
-.row-18trip:hover{
-     transform: scale(1.05);
+
+.row-item img{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+
+    object-fit: cover;
+    transition: 0.2s ease;
+    margin: 0 !important;
+}
+
+.row-item:hover img {
+    transform: scale(1.05);
+}
+
+.row-item:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  bottom: 0;
+  transition: height 0.2s ease-out;
+  background: linear-gradient(to bottom, transparent 0%, rgba(37, 42, 135, 0.692) 100%);
+  z-index: 1;
+}
+.row-item:hover:before {
+  height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -71,14 +137,24 @@ border-radius: 10px;
 <br></br>
 
 <div class="centering">
-<p><span style="font-size: 40px; color: #43b4ff;"><i class="fa fa-gem"></i> azurecrystalz</span></p>
+<p><span style="font-size: 60px; color: #bcc7f2;"><i class="fa fa-gem"></i> azurecrystalz</span></p>
 <p><span style="font-size: 20px; color: #c5dbd8;">Where would you like to go?</span></p>
 
 <div class="row">
 
-<div class="row-enstars"><a href="https://azurecrystalz.github.io/enstars"><img src="https://res.cloudinary.com/djq41tb84/image/upload/v1699047762/enstars/card%20sized/awlyyv5r06mdrmzqekm1.png"></a></div>
+<div class="row-item">
+     
+     <a href="https://azurecrystalz.github.io/enstars" target="_blank">
+     <div class="thumbimage"><img src="https://res.cloudinary.com/djq41tb84/image/upload/v1699047762/enstars/card%20sized/awlyyv5r06mdrmzqekm1.png"></div></a>
+     
+     <a href="https://azurecrystalz.github.io/enstars" class="directory" target="_blank"><b>Ensemble Stars</b></a></div>
+    
+<div class="row-item">
 
-<div class="row-18trip"><a href="https://azurecrystalz.github.io/18trip"><img src="https://res.cloudinary.com/djq41tb84/image/upload/v1710025714/ASSETS%20ALWAYS%20USE%20THIS/HIMERU/bloomed/fczf05vr3k1lq64tpyge.png"></a></div>
+     <a href="https://azurecrystalz.github.io/18trip" target="_blank">
+     <div class="thumbimage"><img src="https://res.cloudinary.com/djq41tb84/image/upload/v1710025714/ASSETS%20ALWAYS%20USE%20THIS/HIMERU/bloomed/fczf05vr3k1lq64tpyge.png"></div></a>
+
+     <a href="https://azurecrystalz.github.io/18trip" class="directory" target="_blank"><b>18 TRIP</b></a></div>
 
 </div> 
 </div>
