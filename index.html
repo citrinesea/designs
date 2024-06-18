@@ -1,0 +1,545 @@
+<!--
+
+credits: isotope combination filtering tutorial by magnusthemes.tumblr.com
+
+-->
+
+<!doctype html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+
+   <title> TLstars (Enstars Translators Masterlist)</title>
+
+   <meta property="og:url" content="https://tlstars.github.io/" />
+   <meta property="og:type" content="website">
+   <meta property="og:title" content= " TLstars (Enstars Translators Masterlist)"/>
+   <meta property="og:description" content="Connecting you with ES Translators!" />
+
+   <link rel="shortcut icon" href="images/logo.png"/>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/essay.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+   <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+   <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+   
+   <script>
+     
+   $(document).ready(function() {
+    var $container = $(".grid"); // the container with all the elements to filter inside
+    var filters = {}; //should be outside the scope of the filtering function
+    /* --- read the documentation on isotope.metafizzy.co for more options --- */
+    var $grid = $container.isotope({
+      itemSelector: ".item", // the elements to filter
+      percentPosition: true // put true if you use percentage widths, otherwise put false
+    });
+    $(".option-set a").click(function(e) {
+      var $this = $(this); // cache the clicked link
+      var filterAttr = "data-filter-value";
+      var filterValue = $this.attr(filterAttr); // cache the filter
+      var $optionSet = $this.parents(".option-set"); // cache the parent element
+      var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+      var filterGroup = filters[group];
+      if (!filterGroup) {
+        filterGroup = filters[group] = [];
+      }
+      var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+      var activeClass = "selected", // the class for active links
+        exclClass = "exclusive"; // the class for exclusive groups
+    comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+      var comboFilter = getComboFilter(filters);
+      $grid.isotope({
+        filter: comboFilter
+      });
+      $this.toggleClass(activeClass);
+      e.preventDefault();
+    });
+   });
+   </script>
+
+ </head>
+
+ <body>
+   <header>
+   </header>
+
+   <main>
+
+<div class="mainwrapper">
+
+     <div class="summer-banner">
+          <img src="images/australian-townscape.jpg"
+               alt="Analyses."></div>
+
+<div class="mainpage-box">
+<div class="labelcategory">
+<p><b><i class="fa fa-star"></i> Welcome to TLStars! Check out the directory below to connect with translators with your biases</b></p></div>
+
+<div class="detail-text">
+     <p><i>Inspired by Mika Enstars' <b><a href="https://enstarsmasterlist.github.io/scoutevent" target="_blank">Scout & Event Story</a></b> and <b><a href="https://enstarsmasterlist.github.io/featureidol" target="_blank">Feature & Idol Story</a></b> masterlists</b>. Check those out if you're looking for specific stories.</i></p></div>
+     
+
+<p>Looking for translations of your favorite Ensemble Stars unit? Looking to branch out? Browse translators below! If you're looking for a certain group they specialize in, use the filters below to sort for them. If you are a translator interested in being added to the masterlist, feel free to DM me <a href="https://x.com/citrinesea">@citrinesea</a></p>
+
+<p>Translators designated as <b>retired</b> do not currently translate Enstars.</p>
+ 
+     
+     <div class="filterbox">
+     <div class="filters">
+     
+        <ul class="filter option-set exclusive" data-filter-group="starpro">
+          <li><b>UNIT</b></li>
+          <li><a href="#" data-filter-value="" class="selected">All</a></li>
+          <li><a href="#" data-filter-value=".none">★ No Bias</a></li>
+          <li><a href="#" data-filter-value=".fine"><i>fine</i></a></li>
+          <li><a href="#" data-filter-value=".trickstar">Trickstar</a></li>
+          <li><a href="#" data-filter-value=".ryuseitai">RYUSEITAI</a></li>
+          <li><a href="#" data-filter-value=".alkaloid">ALKALOID</a></li>
+          <li><a href="#" data-filter-value=".eden">Eden</a></li>
+          <li><a href="#" data-filter-value=".2wink">2wink</a></li>
+          <li><a href="#" data-filter-value=".valkyrie">Valkryie</a></li>
+          <li><a href="#" data-filter-value=".crazyb">Crazy:B</a></li>
+          <li><a href="#" data-filter-value=".undead">UNDEAD</a></li>
+          <li><a href="#" data-filter-value=".rabbits">Ra*bits</a></li>
+          <li><a href="#" data-filter-value=".akatsuki">AKATSUKI</a></li>
+          <li><a href="#" data-filter-value=".knights">Knights</a></li>
+          <li><a href="#" data-filter-value=".mam">MaM</a></li>
+          <li><a href="#" data-filter-value=".doubleface">Double Face</a></li>
+          <li><a href="#" data-filter-value=".switch">Switch</a></li>
+          <li><a href="#" data-filter-value=".4piece">4Piece</a></li>
+          <li><a href="#" data-filter-value=".exfine">Ex-fine</a></li>
+          <li><a href="#" data-filter-value=".eccentrics">Five Eccentrics</a></li>
+        </ul>
+     
+     </div></div>
+     
+     <div class="grid">
+
+          <div class="item ryuseitai">
+               <div class="recommendation-box">
+               
+               <div class="TLname"><p><b><a href="https://310mc.github.io/" target="_blank">310mc</a></b></p></div>
+               
+               <a href="https://310mc.github.io/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/310mc.jpg"
+                           alt="310mc."></div></a>
+               
+               <div class="link"><p><a href="https://310mc.github.io/translations/" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://310mc.github.io/translations/" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>RYUSEITAI, Midori, Chiaki Bias</i></div></p>
+          
+               <div class="socials">
+               <a href="https://x.com/310mc1" target="_blank"><i class="fa fa-twitter"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+          <div class="item valkyrie rabbits undead alkaloid switch">
+               <div class="recommendation-box">
+          <div class="TLname"><p><b><a href="https://anakidd.dreamwidth.org/" target="_blank">Anita</a></b></div></p>
+          
+          <a href="https://anakidd.dreamwidth.org/" target="_blank"><div class="preview-thumbnail">
+               <img
+                      src="images/anita.jpg"
+                      alt="anita."></div></a>
+          
+          <div class="link"><p><a href="https://anakidd.dreamwidth.org/" target="_blank"><b>Read their TLs here</b></a></p></div>
+          <div class="tos">
+               <p><b><a href="https://anakidd.dreamwidth.org/11464.html" target="_blank">Terms of Service</a></b></p></div>
+          <p><div class="detail-text"><i>Valkyrie, Ra*bits, Undead, ALKALOID Bias</i></div></p>
+          <p><div class="detail-text"><b>pfp by <a href="https://x.com/its_sunnwo"  target="_blank"><i>@its_sunnwo</i></a></b></div></p>
+          
+          <p></p>
+     </div></div>
+
+          <div class="item crazyb">
+          <div class="recommendation-box">
+          
+          <div class="TLname"><p><b><a href="https://azurecrystalz.github.io/" target="_blank">aurora</a></b></p></div>
+          
+          <a href="https://azurecrystalz.github.io/" target="_blank"><div class="preview-thumbnail">
+               <img
+                      src="images/azurecrystalz.jpg"
+                      alt="azurecrystalz."></div></a>
+          
+          <div class="link"><p><a href="https://azurecrystalz.github.io/" target="_blank"><b>Read their TLs here</b></a></p></div>
+          <div class="tos">
+               <p><b><a href="https://azurecrystalz.github.io/tos/" target="_blank">Terms of Service</a></b></p></div>
+          <p><div class="detail-text"><i>Crazy:B Bias</i></div></p>
+     
+          <div class="socials">
+          <a href="https://x.com/azurecrystalz" target="_blank"><i class="fa fa-twitter"></i></a></div>
+     
+          <p></p>
+          
+          </div></div>
+
+          <div class="item akatsuki ryuseitai">
+               <div class="recommendation-box">
+               
+               <div class="TLname"><p><b><a href="https://citrinesea.github.io/translations/" target="_blank">citrinesea</a></b></p></div>
+               
+               <a href="https://citrinesea.github.io/translations/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/citrinesea.jpg"
+                           alt="citrinesea."></div></a>
+               
+               <div class="link"><p><a href="https://citrinesea.github.io/translations/" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://citrinesea.github.io/contributor-pages/about.html#translationTOS" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i> AKATSUKI, RYUSEITAI Bias</i></div></p>
+          
+               <div class="socials">
+               <a href="https://x.com/citrinesea" target="_blank"><i class="fa fa-twitter"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+                         <div class="item fine trickstar ryuseitai alkaloid eden crazyb valkyrie 2wink akatsuki undead rabbits knights mam switch">
+               <div class="recommendation-box">
+               
+               <div class="TLname"><p><b><a href="https://aeoki.tumblr.com/" target="_blank">Creampuffs</a></b></p></div>
+               
+               <a href="https://aeoki.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/creampuffs.png"
+                           alt="creampuffs."></div></a>
+               
+               <div class="link"><p><a href="https://aeoki.tumblr.com/enstars" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://aeoki.tumblr.com/req" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i> Translates a bit of everything!</i></div></p>
+          
+               <div class="socials">
+                    <a href="https://aeoki.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+               <div class="item eden">
+                    <div class="recommendation-box">
+                    
+               <div class="TLname"><p><b><a href="https://x.com/hyenahunt" target="_blank">hyenahunt (Jay)</a></b></p></div>
+                    
+                    <a href="https://x.com/hyenahunt" target="_blank"><div class="preview-thumbnail">
+                         <img
+                                src="images/hyenahunt.jpg"
+                                alt="hyenahunt"></div></a>
+                    
+                    <div class="link"><p><a href="https://hyenahunt.tumblr.com/post/660733684727562240/translation-directory" target="_blank"><b>Read their TLs here</b></a></p></div>
+                    <div class="tos">
+                         <p><b><a href="https://hyenahunt.tumblr.com/post/664842683479736320/about-hello-im-jay-and-i-like-translating-in" target="_blank">Terms of Service</a></b></p></div>
+                    <p><div class="detail-text"><i>Eden, Eve, Jun Bias</i></div></p>
+     
+                    <div class="socials">
+                         <a href="https://x.com/hyenahunt" target="_blank"><i class="fa fa-twitter"></i></a>
+                         <a href="https://hyenahunt.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+               
+                    <p></p>
+                    
+                    </div></div>
+
+               <div class="item eden">
+                    <div class="recommendation-box">
+                    
+               <div class="TLname"><p><b><a href="https://www.tumblr.com/ibasae/690380454304563200/introduction-post" target="_blank">Ibasae</a></b> <span style="font-size: 15px"><b>(Retired)</b></span></p></div>
+                    
+                    <a href="https://www.tumblr.com/ibasae/690380454304563200/introduction-post" target="_blank"><div class="preview-thumbnail">
+                         <img
+                                src="images/ibasae.jpg"
+                                alt="ibasae."></div></a>
+                    
+                    <div class="link"><p><a href="https://www.tumblr.com/ibasae" target="_blank"><b>Read their TLs here</b></a></p></div>
+                    <div class="tos">
+                         <p><b><a href="https://www.tumblr.com/ibasae/690380454304563200/introduction-post" target="_blank">Terms of Service</a></b></p></div>
+                    <p><div class="detail-text"><i>Eden, Ibara Bias</i></div></p>
+
+                    <a href="https://www.tumblr.com/ibasae" target="_blank"><i class="fa fa-tumblr"></i></a>
+               
+                    <p></p>
+                    
+                    </div></div>
+
+               <div class="item akatsuki ryuseitai">
+                    <div class="recommendation-box">
+               <div class="TLname"><p><b><a href="https://ecemichi.tumblr.com/" target="_blank">Kirin</a></b> <span style="font-size: 15px"><b>(Retired)</b></span></div></p>
+               
+               <a href="https://ecemichi.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/kirin.jpg"
+                           alt="kirinece."></div></a>
+               
+               <div class="link"><p><a href="https://ecemichi.tumblr.com/tls" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://ecemichi.tumblr.com/tos" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>AKATSUKI, RYUSEITAI, Souma, Midori, Aira Bias</i></div></p>
+
+               <div class="socials">
+                    <a href="https://x.com/hakirinezumi" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://ecemichi.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+
+                    <p></p>
+               </div></div>
+               
+          <div class="item eden">
+               <div class="recommendation-box">
+               
+          <div class="TLname"><p><b><a href="https://kyabetsuhime.tumblr.com/" target="_blank">ksts</a></b></p></div>
+               
+               <a href="https://kyabetsuhime.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/kyabetsuhime.jpg"
+                           alt="ky'."></div></a>
+               
+               <div class="link"><p><a href="https://kyabetsuhime.tumblr.com/post/713176010007429120/directory" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://kyabetsuhime.tumblr.com/" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>Eden, Eve (Hiyori, Jun) Bias</i></div></p>
+
+               <div class="socials">
+                    <a href="https://x.com/kyabetsu_hime" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://kyabetsuhime.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+               <div class="item eden">
+                    <div class="recommendation-box">
+                    
+                    <div class="TLname"><p><b><a href="https://landofzero-archive.tumblr.com/" target="_blank">landofzero</a></b></p></div>
+                    
+                    <a href="https://landofzero-archive.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                         <img
+                                src="images/landofzero.jpg"
+                                alt="landofzero."></div></a>
+                    
+                    <div class="link"><p><a href="https://landofzero-archive.tumblr.com/post/721970185273311232/translation-masterlist" target="_blank"><b>Read their TLs here</b></a></p></div>
+                    <div class="tos">
+                         <p><b><a href="https://landofzero-archive.tumblr.com/post/721970185273311232/translation-masterlist" target="_blank">Terms of Service</a></b></p></div>
+                    <p><div class="detail-text"><i>Adam, Nagisa Bias</i></div></p>
+               
+                    <div class="socials">
+                    <a href="https://x.com/landofzero" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://landofzero-archive.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+               
+                    <p></p>
+                    
+                    </div></div>
+
+               <div class="item mam doubleface">
+                    <div class="recommendation-box">
+                    
+               <div class="TLname"><p><b><a href="https://www.tumblr.com/eveningspringbreeze/" target="_blank">Mango</a></b></p></div>
+                    
+                    <a href="https://www.tumblr.com/eveningspringbreeze/" target="_blank"><div class="preview-thumbnail">
+                         <img
+                                src="images/mango.jpg"
+                                alt="mango."></div></a>
+                    
+                    <div class="link"><p><a href="https://www.tumblr.com/eveningspringbreeze/" target="_blank"><b>Read their TLs here</b></a></p></div>
+                    <div class="tos">
+                         <p><b><a href="https://www.tumblr.com/eveningspringbreeze/" target="_blank">Terms of Service</a></b></p></div>
+                    <p><div class="detail-text"><i>Double Face, MaM Bias</i></div></p>
+               
+                    <p></p>
+                    
+                    </div></div>
+
+
+                    <div class="item 2wink valkyrie switch eccentrics">
+                         <div class="recommendation-box">
+                         
+                         <div class="TLname"><p><b><a href="https://twilightmalachite.tumblr.com/" target="_blank">Mika Enstars</a></b></p></div>
+                         
+                         <a href="https://twilightmalachite.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                              <img
+                                     src="images/mika-enstars.jpg"
+                                     alt="mika_enstars."></div></a>
+                         
+                         <div class="link"><p><a href="https://twilightmalachite.tumblr.com/" target="_blank"><b>Read their TLs here</b></a></p></div>
+                         <div class="tos">
+                              <p><b><a href="https://twilightmalachite.tumblr.com/faq" target="_blank">Terms of Service</a></b></p></div>
+                         <p><div class="detail-text"><i>2wink, Valkyrie, Switch, Five Eccentrics Bias</i></div></p>
+                    
+                         <div class="socials">
+                         <a href="https://x.com/mika_enstars" target="_blank"><i class="fa fa-twitter"></i></a>
+                         <a href="https://twilightmalachite.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+                    
+                         <p></p>
+                         
+                         </div></div>
+
+          <div class="item trickstar alkaloid knights">
+          <div class="recommendation-box">
+               
+          <div class="TLname"><p><b><a href="https://nenosuns.wordpress.com/" target="_blank">nenosuns</a></b></p></div>
+               
+               <a href="https://nenosuns.wordpress.com/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/nenosuns.jpg"
+                           alt="nenosuns."></div></a>
+               
+               <div class="link"><p><a href="https://nenosuns.wordpress.com/enstars/" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://nenosuns.wordpress.com/" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>Ritsu, Mao, Trickstar, ALKALOID Bias</i></div></p>
+
+               <div class="socials">
+                    <a href="https://x.com/nenosuns" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://asteracelatte.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+                            
+          <div class="item ryuseitai switch crazyb 4piece">
+               <div class="recommendation-box">
+          <div class="TLname"><p><b><a href="https://raikanata.tumblr.com/" target="_blank">raikanata</a></b></div></p>
+          
+          <a href="https://raikanata.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+               <img
+                      src="images/raikanata.jpg"
+                      alt="raikanata."></div></a>
+          
+          <div class="link"><p><a href="https://raikanata.tumblr.com/masterlist" target="_blank"><b>Read their TLs here</b></a></p></div>
+          <div class="tos">
+               <p><b><a href="https://raikanata.tumblr.com/tos" target="_blank">Terms of Service</a></b></p></div>
+          <p><div class="detail-text"><i>Kanata, Switch, Crazy:B, Raika Bias</i></div></p>
+          
+          <p></p>
+     </div></div>
+
+     
+     <div class="item valkyrie">
+          <div class="recommendation-box">
+          
+     <div class="TLname"><p><b><a href="https://raspberrytls.neocities.org/directory" target="_blank">raspberry</a></b></p></div>
+          
+          <a href="https://raspberrytls.neocities.org/directory" target="_blank"><div class="preview-thumbnail">
+               <img
+                      src="images/raspberry.jpg"
+                      alt="raspberry."></div></a>
+          
+          <div class="link"><p><a href="https://raspberrytls.neocities.org/directory" target="_blank"><b>Read their TLs here</b></a></p></div>
+          <div class="tos">
+               <p><b><a href="https://raspberrytls.neocities.org/" target="_blank">Terms of Service</a></b></p></div>
+          <p><div class="detail-text"><i>Valkyrie Bias</i></div></p>
+     
+          <div class="socials">
+          <a href="https://x.com/raspberrytls" target="_blank"><i class="fa fa-twitter"></i></a></div>
+     
+          <p></p>
+          
+          </div></div>
+
+               <div class="item knights">
+                    <div class="recommendation-box">
+               <div class="TLname"><p><b><a href="https://withmyhonesty.tumblr.com/" target="_blank">Ren</a></b></p></div>
+               
+               <a href="https://withmyhonesty.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/withmyhonesty.jpg"
+                           alt="withmyhonesty."></div></a>
+               
+               <div class="link"><p><a href="https://withmyhonesty.tumblr.com/" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://withmyhonesty.tumblr.com/me" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>Knights, Ritsu Bias</i></div></p>
+
+               <div class="socials">
+                    <a href="https://x.com/dozingknight" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://withmyhonesty.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+
+               <div class="item crazyb eden exfine 4piece">
+                    <div class="recommendation-box">
+                    
+                    <div class="TLname"><p><b><a href="https://sunnyskiestls.tumblr.com/" target="_blank">Sunny</a></b></p></div>
+                    
+                    <a href="https://sunnyskiestls.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+                         <img
+                                src="images/sunny.jpg"
+                                alt="sunny."></div></a>
+                    
+                    <div class="link"><p><a href="https://sunnyskiestls.tumblr.com/" target="_blank"><b>Read their TLs here</b></a></p></div>
+                    <div class="tos">
+                         <p><b><a href="https://x.com/sunnyskiestls/status/1784077646923448534" target="_blank">Terms of Service</a></b></p></div>
+                    <p><div class="detail-text"><i>Crazy:B, Eden (Hiyori), ex-fine, Raika Bias</i></div></p>
+               
+                    <div class="socials">
+                    <a href="https://x.com/sunnyskiestls" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://sunnyskiestls.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+               
+                    <p></p>
+                    
+                    </div></div>
+
+     <div class="item crazyb alkaloid">
+          <div class="recommendation-box">
+          
+          <div class="TLname"><p><b><a href="https://toujokaname.tumblr.com/" target="_blank">toujokaname (mello)</a></b></p></div>
+          
+          <a href="https://toujokaname.tumblr.com/" target="_blank"><div class="preview-thumbnail">
+               <img
+                      src="images/toujokaname.jpg"
+                      alt="toujokaname."></div></a>
+          
+          <div class="link"><p><a href="https://toujokaname.tumblr.com/" target="_blank"><b>Read their TLs here</b></a></p></div>
+          <div class="tos">
+               <p><b><a href="https://toujokaname.tumblr.com/about" target="_blank">Terms of Service</a></b></p></div>
+          <p><div class="detail-text"><i> HiMERU, Tatsumi Bias</i></div></p>
+     
+          <div class="socials">
+          <a href="https://x.com/tattsuhime" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://toujokaname.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+     
+          <p></p>
+          
+          </div></div>
+
+          <div class="item akatsuki 4piece">
+               <div class="recommendation-box">
+               
+                    <div class="TLname"><p><b><a href="https://www.tumblr.com/verdantcrimson/" target="_blank">verdantcrimson</a></b></p></div>
+               
+               <a href="https://www.tumblr.com/verdantcrimson/" target="_blank"><div class="preview-thumbnail">
+                    <img
+                           src="images/verdantcrimson.jpg"
+                           alt="verdantcrimson."></div></a>
+               
+               <div class="link"><p><a href="https://www.tumblr.com/verdantcrimson/" target="_blank"><b>Read their TLs here</b></a></p></div>
+               <div class="tos">
+                    <p><b><a href="https://www.tumblr.com/verdantcrimson/725023985227759616/masterlist-terms-of-use?source=share" target="_blank">Terms of Service</a></b></p></div>
+               <p><div class="detail-text"><i>AKATSUKI, Kanna Bias</i></div></p>
+          
+               <div class="socials">
+               <a href="https://x.com/verdantcrimson" target="_blank"><i class="fa fa-twitter"></i></a>
+               <a href="https://www.tumblr.com/verdantcrimson/" target="_blank"><i class="fa fa-tumblr"></i></a></div>
+          
+               <p></p>
+               
+               </div></div>
+               
+   
+</div></div>
+</div><br></br></div>
+
+
+</main>
+ </body>
+</html>
