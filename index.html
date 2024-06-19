@@ -28,8 +28,6 @@ body{
     }
 }
 
-h1, h2, h3, h4 {}
-
 img {
   width: auto;
   height: auto;
@@ -129,6 +127,9 @@ img {
 @media only screen and (max-width: 600px) {
     .row {
      grid-template-columns:repeat(auto-fill,minmax(400px, 1fr))
+    }
+    .row-item {
+     width: 100%;
     }
 }
 
