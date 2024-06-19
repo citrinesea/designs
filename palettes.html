@@ -8,22 +8,49 @@
    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+   <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+
+   <script>
+    $(document).ready(function() {
+     var $container = $(".grid"); // the container with all the elements to filter inside
+     var filters = {}; //should be outside the scope of the filtering function
+     /* --- read the documentation on isotope.metafizzy.co for more options --- */
+     var $grid = $container.isotope({
+       itemSelector: ".palette", // the elements to filter
+       percentPosition: true // put true if you use percentage widths, otherwise put false
+     });
+     $(".option-set a").click(function(e) {
+       var $this = $(this); // cache the clicked link
+       var filterAttr = "data-filter-value";
+       var filterValue = $this.attr(filterAttr); // cache the filter
+       var $optionSet = $this.parents(".option-set"); // cache the parent element
+       var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+       var filterGroup = filters[group];
+       if (!filterGroup) {
+         filterGroup = filters[group] = [];
+       }
+       var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+       var activeClass = "selected", // the class for active links
+         exclClass = "exclusive"; // the class for exclusive groups
+     comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+       var comboFilter = getComboFilter(filters);
+       $grid.isotope({
+         filter: comboFilter
+       });
+       $this.toggleClass(activeClass);
+       e.preventDefault();
+     });
+    });
+    </script>
+
 <style>
 
 body{
      background-color: #ffffff;
      font-family: "Nunito Sans", Calibri, sans-serif;
-}
-
-.row {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   text-align: center;
-
-   margin: 0 auto;
-   padding: 10px;
-   gap: 0.5;
-   width: 100%;
+     text-align: center;
 }
 
 .block {
@@ -44,31 +71,167 @@ body{
     font-size: 25px;
 }
 
-.palette {
-display: inline-block;
-font-size: 15px;
+.filterbox {
+  text-align: left;
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  padding: 15px 0;
+  color: #130707;
 }
+
+.filterbox .filters {padding:10px 45px 0 45px;}
+.filterbox ul {padding:0;}
+
+.filterbox li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.filterbox li a {
+  color: #160606;
+  margin: 0 5px;
+}
+
+.filterbox ul b {
+  margin: 0 5px;
+  color: #042d1f;
+}
+
+.grid{
+background: #ffffff;
+}
+
+.grid .palette {
+  display: inline-block;
+  text-align:center;
+  padding: 15px;
+  display: block;
+  width: 48%;
+  box-sizing: border-box;
+  margin: 1%;
+  overflow: auto;
+}
+
+.text {text-align:left;}
+
+.selected {
+  color: #fff;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* color of the span text */
+  color: rgb(119, 162, 241);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(71, 75, 71);
+  /* color of the tooltip text */
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 4;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  .filterbox {width: 90%;}
+  .grid {width: 90%}
+  .grid .palette {width: 100%; display: inline-block; margin: 1% 0;}
+  }
+
 
 </style>
 </head>
 
 <body>
 
+
+    <div class="filterbox">
+        <div class="filters">
+        
+           <ul class="filter option-set exclusive" data-filter-group="charms">
+             <li><b>By Character</b></li>
+             <li><a href="#" data-filter-value="" class="selected">All</a></li>
+             <li><a href="#" data-filter-value=".chiaki">Chiaki</a></li>
+             <li><a href="#" data-filter-value=".kanata">Kanata</a></li>
+             <li><a href="#" data-filter-value=".tetora">Tetora</a></li>
+             <li><a href="#" data-filter-value=".midori">Midori</a></li>
+             <li><a href="#" data-filter-value=".shinobu">Shinobu</a></li>
+             <li><a href="#" data-filter-value=".keito">Keito</a></li>
+             <li><a href="#" data-filter-value=".kuro">Kuro</a></li>
+             <li><a href="#" data-filter-value=".souma">Souma</a></li>
+           </ul>
+        
+        <ul class="filter option-set exclusive" data-filter-group="events">
+             <li><b>Palette Colors</b></li>
+             <li><a href="#" data-filter-value="" class="selected">All</a></li>
+             <li><a href="#" data-filter-value=".red"><span class="block" style="background-color: rgb(212, 63, 63);"></span></a></li>
+             <li><a href="#" data-filter-value=".orange"><span class="block" style="background-color: orange;"></span></a></li>
+             <li><a href="#" data-filter-value=".yellow"><span class="block" style="background-color: yellow;"></span></a></li>
+             <li><a href="#" data-filter-value=".green"><span class="block" style="background-color: green;"></span></a></li>
+             <li><a href="#" data-filter-value=".blue"><span class="block" style="background-color: rgb(54, 106, 204);"></span></a></li>
+             <li><a href="#" data-filter-value=".purple"><span class="block" style="background-color: rgb(96, 54, 173);"></span></a></li>
+             <li><a href="#" data-filter-value=".brown"><span class="block" style="background-color: rgb(88, 57, 57);"></span></a></li>
+             <li><a href="#" data-filter-value=".black"><span class="block" style="background-color: black;"></span></a></li>
+             <li><a href="#" data-filter-value=".white"><span class="block" style="background-color: rgb(244, 239, 239);"></span></a></li>
+             <li><a href="#" data-filter-value=".pink"><span class="block" style="background-color: pink;"></span></a></li>
+           </ul>
+        
+           <ul class="filter option-set exclusive" data-filter-group="translations">
+             <li><b>Theme</b></li>
+             <li><a href="#" data-filter-value="" class="selected">All</a></li>
+             <li><a href="#" data-filter-value=".tropical">Tropical</a></li>
+             <li><a href="#" data-filter-value=".chic">Chic</a></li>
+             <li><a href="#" data-filter-value=".fresh">Refreshing</a></li>
+             <li><a href="#" data-filter-value=".moody">Moody</a></li>
+             <li><a href="#" data-filter-value=".vibrant">Vibrant</a></li>
+           </ul>
+        
+        </div></div>
+
 <div class="name"><b>keito hasumi palettes</b></div>
 
-<div class="row">
-<div class="palette">
+<div class="grid">
+
+<div class="palette chic fresh keito green yellow blue brown">
     <p><b>Aomi's Clothes</b></p>
-    <span class="block" style="background-color: #68ba79;"></span>
-    <span class="block" style="background-color: #ecf5e5;"></span>
-    <span class="block" style="background-color: #457d7b;"></span>
-    <span class="block" style="background-color: #084159;"></span>
-    <span class="block" style="background-color: #52898c;"></span>
-    <span class="block" style="background-color: #f0ef96;"></span>
-    <span class="block" style="background-color: #532a3f;"></span>
+    <div class="tooltip"><span class="block" style="background-color: #68ba79;"></span>
+        <span class="tooltiptext">Emerald <b>(#68ba79)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #ecf5e5;"></span>
+        <span class="tooltiptext">Honeydew <b>(#ecf5e5)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #084159;"></span>
+        <span class="tooltiptext">Indigo Dye <b>(#084159)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #457d7b;"></span>
+        <span class="tooltiptext">Myrtle Green <b>(#457d7b)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #8bb9bc;"></span>
+        <span class="tooltiptext">Light Blue <b>(#8bb9bc)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #f0ef96;"></span>
+        <span class="tooltiptext">Flax <b>(#f0ef96)</b></span>
+    </div>
+    <div class="tooltip"><span class="block" style="background-color: #532a3f;"></span>
+        <span class="tooltiptext">Violet <b>(#532a3f)</b></span>
+    </div>
+       
+    
 </div>
 
-<div class="palette">
+<div class="palette keito green">
     <p><b>Quarrel Festival</b></p>
     <span class="block" style="background-color: aqua;"></span>
     <span class="block" style="background-color: aqua;"></span>
@@ -79,8 +242,7 @@ font-size: 15px;
     <span class="block" style="background-color: aqua;"></span>
 </div>
 
-
-<div class="palette">
+<div class="palette keito green">
     <p><b>Victory Flag</b></p>
     <span class="block" style="background-color: aqua;"></span>
     <span class="block" style="background-color: aqua;"></span>
@@ -90,8 +252,47 @@ font-size: 15px;
     <span class="block" style="background-color: aqua;"></span>
     <span class="block" style="background-color: aqua;"></span>
 </div>
+
 </div>
 
+<div class="name"><b>kuro kiryu palettes</b></div>
+
+<div class="grid">
+
+<div class="palette chic fresh kuro green yellow blue brown">
+    <p><b>Aomi's Clothes</b></p>
+    <span class="block" style="background-color: #68ba79;"></span>
+    <span class="block" style="background-color: #ecf5e5;"></span>
+    <span class="block" style="background-color: #084159;"></span>
+    <span class="block" style="background-color: #457d7b;"></span>
+    <span class="block" style="background-color: #8bb9bc;"></span>
+    <span class="block" style="background-color: #f0ef96;"></span>
+    <span class="block" style="background-color: #532a3f;"></span>
+</div>
+
+<div class="palette kuro green">
+    <p><b>Quarrel Festival</b></p>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+</div>
+
+<div class="palette kuro green">
+    <p><b>Victory Flag</b></p>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+    <span class="block" style="background-color: aqua;"></span>
+</div>
+
+</div>
 </body>
 
  </html>
