@@ -46,10 +46,19 @@ img {
    text-align: center;
 }
 
+.title {
+    font-size: 30px;
+}
+
 .background {
     width: 100%;
     position: absolute;
+    overflow: hidden;
     z-index: -1;
+}
+
+.background img {
+    object-fit: cover;
 }
 
 .sprite img {
@@ -65,7 +74,7 @@ img {
   width: fit-content;
   background-color: rgb(32, 32, 91);
   color: white;
-  font-size: 20px;
+  font-size: 14px;
   padding: 15px;
 
   margin: auto;
@@ -107,6 +116,21 @@ img {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .centering {
+     grid-template-columns: 1fr;
+    }
+    .title {
+     font-size: 40px;
+    }
+    .background {
+     max-width: 300px;
+    }
+    .quote {
+     max-width: 375px;
+    }
+}
+
 </style>
 </head>
 
@@ -123,7 +147,7 @@ img {
     <div class="sprite"><img src="img/test-sprite.png"></div>
 
     <div class="nameplate"><b>Midori</b></div>
-    <div class="quote"></div>
+    <div class="quote">Hey. Good to see you again.</div>
 
     <button>
         <i class="fa fa-star"></i>
