@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title>Star Life Successor</title>
+
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+   <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script>
+    setInterval(function () {
+    var imgEl = document.getElementById('Background');
+    if (!imgEl) return;
+    
+    var date = new Date();
+    
+    imgEl.src = date.getHours() <= 6
+    ? "img/day-bg.jpg"
+    : date.getHours() <= 14
+    ? "img/day-bg.jpg"
+    : date.getHours() >= 18
+    ? "img/dusk-bg.jpg"
+    : "img/night-bg.jpg";
+    }
+)
+    
+</script>
+<style>
+
+body{
+     background-color: #ffffff;
+     font-family: "Nunito Sans", Calibri, sans-serif;
+
+     animation: fadeInAnimation ease 3s;
+     animation-iteration-count: 1;
+     animation-fill-mode: forwards;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.centering {
+   text-align: center;
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.sprite img {
+  width: auto;
+  height: 500px;
+
+  animation-duration: 1s;
+  animation-name: fadeAndScale;
+  animation-timing-function: cubic-bezier(.71,.55,.62,1.57);
+}
+
+.nameplate {
+  width: fit-content;
+  background-color: rgb(32, 32, 91);
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+
+  margin: auto;
+  text-align: left;
+}
+
+.quote {
+  border: 2px solid rgb(159, 186, 196);
+  border-radius: 10px;
+  font-size: 20px;
+  width: 700px;
+  padding: 15px;
+
+  margin: auto;
+}
+
+.button {
+    width: 50px;
+    background-color: none;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeAndScale {
+    from {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="centering">
+<div class="title"><i class="fa fa-anchor"></i> <b>Starlife Successor</b></div>
+
+<div class="background">
+    <script type="text/javascript" src="app.js" ></script>
+    <img id='Background' src="img/day-bg.jpg">
+</div>
+
+    <div class="sprite"><img src="img/test-sprite.png"></div>
+
+    <div class="nameplate"><b>Midori</b></div>
+    <div class="quote"></div>
+
+    <button>
+        <i class="fa fa-star"></i>
+    </button>  
+
+</div>
+ 
+</body>
+
+<script>
+    let idx = 0;
+
+    const poem = [
+    "I was gonna stay in today, but Sazanami-senpai and Isara-senpai invited me out to the arcade. I think it's the one with a rhythm game that has a Tropical Troppeys song on it. I guess it'd be rude if I didn't go...",
+    "Mmm... What if I got a little basketball hoop for the office? Well, knowing Morisawa-senpai and Tetora-kun, they'd probably break it...",
+    "I went out on a run with Tetora-kun and Shinobu-kun and we had breakfast at mine after. It made me realize we don't spend a lot of mornings together... It's kinda nice to have new experiences with your friends.",
+    "When's the last time I tried doing a handstand...? %name%, do you wanna see one? ... Sorry, I don't know why I asked that. It was just getting a little too quiet.",
+    "Earlier, I saw Morisawa-senpai and Shinkai-senpai pawing around for something in the pond in Sky Garden. It didn't look like they needed help, so I figured I was better off not asking. Still, I'm a little curious about what they were looking for...",
+    "Hasumi-senpai keeps telling me to stop slouching. It's not my fault I'm so tall... Still, he's pretty relentless. I'm trying to be better with fixing my posture whenever I catch myself slumping.",
+    "Winning the parfait contest at Cafe Cinnamon kinda gave me a rush. I was thinking I'd try and get more into design. Maybe Shinobu-kun'll let me borrow some of his art stuff if I ask.",
+    "I promised myself I'd work harder this year, but it always feels like there's so much to do and so little time... maybe it means I'm doing a lot more work than before, though. That's good, right?",
+    ]
+    
+    document.querySelector('button').addEventListener('click', () => {
+        document.querySelector('.quote').innerHTML = poem[idx]
+        idx = (idx + 1) % poem.length;
+    
+    })
+    
+</script>
+
+</html>
