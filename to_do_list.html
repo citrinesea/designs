@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Date with Keito | To-Do List Manager</title>
+  <link rel="stylesheet" href="css/calender.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+  <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<script>
+    setInterval(function () {
+    var imgEl = document.getElementById('Background');
+    if (!imgEl) return;
+    
+    var date = new Date();
+    
+    imgEl.src = date.getHours() <= 6
+    ? "img/cafe-bg.jpg"
+    : date.getHours() <= 14
+    ? "img/cafe-bg.jpg"
+    : date.getHours() >= 18
+    ? "img/cafe-bg.jpg"
+    : "img/cafe-bg.jpg";
+    }
+)
+</script>
+</head>
+
+<body>
+
+<div class="centering">
+
+  <div class="container">
+
+    <div class="background">
+        <script type="text/javascript" src="app.js"></script>
+        <img id='Background' src="img/cafe-bg.jpg">
+    </div>
+
+    
+    <div class="animate__animated animate__fadeIn">
+    <div class="anime-boy"><img id="anime-boy-img" src="img/anime-boy-no-reminder.png" alt="Anime Boy"></div></div>
+
+
+    <div class="animate__animated animate__fadeInUp">
+    <div class="dialogue-container">
+
+    <div class="nameplate"><b>Keito</b></div>
+    <div class="reminder-display" id="reminder-display">Quite a busy day for us both... Is there anything you have to do today?</div></div>
+    </div>
+
+    <div class="reminders-container">
+      <div id="todo-label"><div class="typed-out">Tasks for the Day</div></div>
+
+      <div id="reminders-list"></div>
+
+      <p style="color: rgba(79, 87, 38, 0.791); background-color: white; font-size: 10px; padding: 10px;"><i>(Click the lotus when you have completed each task)</i></p>
+
+      <div class="button-container">
+        <button id="complete-reminder-btn" style="display:none;">I've completed everything on my to-do list.</button>
+       <button id="clear-todo-btn">Clear to-do List</button>
+     </div>
+  
+  </div>
+
+<div class="soundscape-menu">
+  <a href="https://mynoise.net/NoiseMachines/harborSoundscapeGenerator.php" target="_blank" class="circle-btn">
+      🌊
+  </a>
+  <a href="https://mynoise.net/NoiseMachines/cafeRestaurantNoiseGenerator.php" target="_blank" class="circle-btn">
+      ☕
+  </a>
+  <a href="https://mynoise.net/NoiseMachines/japaneseGardenSoundscapeGenerator.php" target="_blank" class="circle-btn">
+      🎋
+  </a>
+  <a href="https://mynoise.net/NoiseMachines/stormSoundGenerator.php" target="_blank" class="circle-btn">
+      🌧️
+  </a>
+</div>
+
+    </div>
+    <div class="reminder-box">
+      <div id="label" style="text-align: left; font-size:23px;"><div class="typed-out"><b>Let's set a reminder</b></div></div>
+
+      <input type="text" id="reminder-input" placeholder="Enter your reminder...">
+      <input type="time" id="reminder-time">
+      <button id="set-reminder">Set Reminder</button>
+      <p id="confirmation-message" style="color: rgb(26, 64, 26); display: none;"><b>I'll make sure to remind you then.</b></p>
+    </div>
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

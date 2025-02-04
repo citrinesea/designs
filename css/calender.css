@@ -1,0 +1,318 @@
+html, body {
+  font-family: "Noto Sans JP", Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+
+body {
+opacity: 0;
+animation: fadeIn 2.3s forwards;
+}
+
+@keyframes fadeIn {
+to {
+    opacity: 1;
+}
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.centering {
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('background.jpg');
+  background-size: cover;
+}
+
+.background {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: -99;
+}
+
+.background img {
+  object-fit: cover;
+}
+
+.anime-boy {
+  position: relative;
+  width: auto;
+  height: 500px;
+  z-index: -9;
+}
+
+.anime-boy img{
+  max-width: 100%;
+}
+
+.dialogue-container {
+  width: fit-content;
+  margin: auto;
+}
+
+.nameplate {
+  width: fit-content;
+  background-color: rgb(32, 32, 91);
+  color: white;
+  font-size: 20px;
+  padding: 0 15px 5px 15px;
+  text-align: left;
+  margin-left: 0;
+}
+
+.reminder-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.reminders-container {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+#todo-label {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #241515;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 0;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  background-color: #241515;
+  color: white;
+}
+
+.typed-out {
+  overflow: hidden;
+  border-right: .15em solid rgb(170, 255, 0);
+  white-space: nowrap;
+  animation: typing 1s steps(20, end) forwards;
+  width: 0;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+#reminders-list {
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+}
+
+.reminder-display {
+  border: 2px solid rgb(180, 198, 205);
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  font-size: 23px;
+  width: 700px;
+  padding: 15px;
+  z-index: 3;
+}
+
+.confirmation-message {
+  color: rgb(0, 0, 0);
+  display: none;
+  margin-top: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.time-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.time-section {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.time-scroll {
+  width: 60px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.time-options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.time-options div {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.time-options div:hover {
+  background-color: #f0f0f0;
+}
+
+.reminder-item span {
+  font-weight: bold;
+  color: rgb(87, 130, 44);
+  display: block;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.button-container {
+display: flex;
+gap: 5px;
+justify-content: center;
+}
+
+#complete-reminder-btn,
+#clear-todo-btn {
+padding: 10px 20px;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-align: center;
+width: 125px;
+box-sizing: border-box;
+}
+
+#complete-reminder-btn {
+background-color: #4CAF50;
+}
+
+#complete-reminder-btn:hover {
+background-color: #45a049;
+}
+
+#clear-todo-btn {
+background-color: #b34a45;
+}
+
+#clear-todo-btn:hover {
+background-color: #bd6449;
+}
+
+@media only screen and (max-width: 600px) {
+  .anime-boy img {
+      width: 100%;
+      right: 10px;
+  }
+  .reminder-display {
+   max-width: 375px;
+  }
+}
+
+.reminder-item {
+position: relative;
+padding: 20px 10px;
+margin-bottom: 10px;
+word-wrap: break-word;
+font-size: 14px;
+}
+
+.complete-button {
+position: absolute;
+bottom: -10px;
+right: 0;
+height: 28px;
+width: 28px;
+border-radius: 50%;
+background-color: rgb(255, 255, 255);
+color: white;
+border: none;
+cursor: pointer;
+transition: 0.25s;
+}
+
+.delete-button {
+position: absolute;
+top: -2px;
+left: -2px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 20px;
+width: 20px;
+border-radius: 50%;
+background-color: rgb(179, 162, 162);
+color: white;
+font-size: 14px;
+border: none;
+cursor: pointer;
+transition: 0.25s;
+}
+
+.complete-button:hover, .delete-button:hover {
+  opacity: 0.3;
+}
+
+.lotus-icon {
+width: 15px;
+height: 15px;
+display: block;
+margin: auto;
+}
+
+.soundscape-menu {
+background-color: rgba(0, 0, 0, 0.366);
+position: fixed;
+bottom: 10px;
+left: 10px;
+display: flex;
+align-items: center;
+}
+
+.circle-btn {
+background-color: #241515;
+color: white;
+border: 5px solid #379d25;
+border-radius: 50%;
+padding: 7px;
+font-size: 24px;
+margin: 0 5px;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.circle-btn:hover {
+background-color: #444;
+}
